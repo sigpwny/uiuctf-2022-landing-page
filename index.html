@@ -54,7 +54,7 @@
                             <hr><br />
                             <span class="font-bold">Attachments</span><br /><br />
                         </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
+                        <div id="profiles" class="flex flex-wrap gap-2 mb-4">
                             <a href="https://nicholas.sh">
                                 <figure class="relative w-36 cursor-pointer">
                                     <img class="rounded-md hover:opacity-50" src="https://nicholas.sh/profile.webp">
@@ -149,6 +149,15 @@
             </div>
         </div>
     </div>
+
+    <script type="text/javascript">
+        // from https://stackoverflow.com/questions/7070054/javascript-shuffle-html-list-element-order
+        let list = document.querySelector('#profiles');
+        for (let i = list.children.length; i >= 0; i--) {
+            // appendChild moves the node (from a random source location, hence shuffling)
+            list.appendChild(list.children[Math.floor(Math.random() * i)]);
+        }
+    </script>
 </body>
 
 </html>
